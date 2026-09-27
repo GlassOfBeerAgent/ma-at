@@ -110,7 +110,7 @@ Current SP1 verification key: `0x000c653a242999b53decd2c3d31fc211e432b38eb4ead43
 ## Security
 
 - **Implemented:** the ZK receipt-inclusion proof, the six-check settle gate, the crash-safe settlement ledger, pausable contracts, and circuit breakers.
-- **Internal automated review:** contracts were checked with [glassofbeer.ai/heist](https://glassofbeer.ai/heist), our own adversarial exploit agent. This is an in-house tool, not a third-party audit. Independent Heist audit (Sept 27, 2026) against commit bb3e7c0 — 8/8 invariants held, 2 findings (both fund-lock edge cases, not currently exploitable on the live deployment) fixed in v3, not yet deployed. Full report: [`docs/audits/2026-09-27-intentmanager-v2-heist-audit.md`](./docs/audits/2026-09-27-intentmanager-v2-heist-audit.md).
+- **Internal automated review:** contracts were checked with [glassofbeer.ai/heist](https://glassofbeer.ai/heist), our own adversarial exploit agent. This is an in-house tool, not a third-party audit. Latest run: Sept 27, 2026, against commit `bb3e7c0` (IntentManager v2) — 8/8 tested invariants held (no double-payout, no unauthorized settlement/slash, no premature refund, reentrancy blocked). Two findings (both fund-lock edge cases under specific future conditions, neither exploitable on the current live deployment) are fixed in a reviewed v3, not yet deployed. [Full report](./docs/audits/2026-09-27-intentmanager-v2-heist-audit.md).
 - **Planned before mainnet:** an external third-party audit.
 
 ## The risk framework
